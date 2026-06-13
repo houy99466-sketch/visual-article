@@ -25,13 +25,17 @@ Save every run under `E:\codex produce\<specific-context-name>\`. Put the articl
 2. Decide a clear article angle. Prefer practical value over a transcript-style summary.
 3. Choose an output folder name from the specific thing being built or explained.
 4. Build a compact content brief with:
-   - Target reader or user
-   - Market problem
-   - Proposed solution
-   - Key advantages
-   - Concrete example scenario
-   - Future outlook
-   - Best visual explanations
+   - 目标读者或目标用户
+   - 市场问题或工作流困境
+   - 解决方案
+   - 核心优势
+   - 上下文中出现的核心功能和生成产物
+   - 实际价值、意义和工作流影响
+   - 关键设计取舍或决策
+   - 具体案例场景
+   - 未来展望
+   - 上下文中提到的 GitHub 或项目链接
+   - 最适合解释内容的视觉模块
 5. Read `references/article-structure.md` before drafting the article.
 6. Read `references/visual-patterns.md` before creating article diagrams.
 7. Read `references/wechat-format.md` before creating the primary article output.
@@ -46,16 +50,22 @@ Save every run under `E:\codex produce\<specific-context-name>\`. Put the articl
 The article must include:
 
 - A title derived from the context.
+- Chinese section titles only, unless the user explicitly asks for another language.
 - A short preface or summary, not overly long.
-- A section explaining what problem exists in the market or user workflow.
-- A section explaining the solution.
-- A section explaining advantages.
+- A substantial section explaining what problem exists in the market or user workflow.
+- A substantial section explaining the solution.
+- A substantial section explaining the value, functions, meaning, and advantages.
+- A core function breakdown based on the visible context.
 - A focused example or scenario after the advantages. This is the main persuasive section.
+- A section explaining key design choices or tradeoffs when the context contains them.
 - A future outlook section after the example.
+- A project address or related links section when GitHub or another public link appears in context.
 - A concise ending.
 - Multiple visuals built directly into the WeChat-copyable HTML, such as flow blocks, system maps, before/after comparisons, timelines, or scenario diagrams made from styled sections, tables, text labels, separators, and simple shapes.
 
 When the context lacks complete facts, create plausible details that fit the demonstrated function and label the article as a product narrative rather than a factual case study. Do not invent specific external statistics, company claims, or user quotes unless the conversation provides them.
+
+Default to a Chinese long-form article suitable for a WeChat Official Account. Market problem, solution, advantages, example, and future outlook are the minimum skeleton, not a limit. Expand the article by mining the visible context for concrete functionality, user value, workflow change, meaning, decisions, produced artifacts, publishing links, and what the work enables next. Unless the user asks for a short article, aim for at least 1800 Chinese characters when enough context exists.
 
 ## Output Rules
 

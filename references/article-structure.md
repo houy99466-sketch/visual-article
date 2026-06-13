@@ -1,57 +1,91 @@
-# Article Structure
+# 文章结构
 
-Use this structure for every article unless the user explicitly asks for another format.
+默认写成中文公众号长文，除非用户明确要求其他语言。文章不是对话摘要，也不是照着模板填空；它要把当前可见上下文里的项目、功能、设计决策、产物、价值和意义整理成一篇读者能看懂、愿意继续读、也能理解“为什么这件事有用”的文章。
 
-## Narrative Order
+## 写作目标
 
-1. Title
-   - Derive from the project, feature, or outcome in the current visible conversation.
-   - Make it concrete and understandable.
+- 全文使用中文标题和中文小标题。不要使用 `Preface`、`The Problem`、`The Solution`、`Why It Helps`、`A Concrete Example`、`Future Outlook`、`Closing` 这类英文标题。
+- 市场困境、解决方案、优势、案例、未来展望只是最低骨架，不是文章内容上限。
+- 主动从上下文中挖掘更多内容：用户真正想解决什么、为什么这个需求出现、过程中做了哪些取舍、最终形成了什么能力、这个能力能给谁带来什么改变。
+- 文章应尽量丰满。除非用户要求短文，默认写成中长篇公众号文章，建议正文至少 1800 字；上下文很丰富时可以更长。
+- 概要或前言要短，但正文要展开。不要每个部分只写两三句话就结束。
+- 不要编造外部统计数据、真实用户引语、公司背书或未经上下文支持的事实。可以基于功能做合理场景设定，并让它保持“产品叙事”口吻。
 
-2. Preface or summary
-   - Keep it short.
-   - Explain what was built, designed, or clarified.
-   - Avoid a long abstract.
+## 推荐叙事顺序
 
-3. Market or workflow problem
-   - Explain the pain in practical terms.
-   - If the conversation lacks market details, infer a realistic workflow pain from the feature.
-   - Avoid unsupported numerical claims.
+1. 标题
+   - 从当前项目、功能或成果中提炼。
+   - 具体、清楚、有传播感。
 
-4. Solution
-   - Explain the product, workflow, automation, skill, or system.
-   - Describe what it takes as input and what it produces.
+2. 前言 / 概要
+   - 简短说明这次做了什么、为什么值得写。
+   - 不要超过正文气势，避免写成长摘要。
 
-5. Advantages
-   - Explain why this approach is useful.
-   - Prefer concrete advantages: less manual work, clearer communication, reusable process, better consistency, faster publishing, easier decision-making.
+3. 为什么会有这个问题
+   - 写市场困境、工作流困境、用户日常痛点。
+   - 不只写“市场上有什么问题”，还要解释这些问题为什么让人低效、焦虑、重复劳动或难以传播成果。
 
-6. Example scenario
-   - Make this the strongest section.
-   - Create a realistic user, situation, starting problem, use process, and final outcome.
-   - Use the example to demonstrate both functionality and advantages.
-   - If details are missing, invent a plausible scenario consistent with the conversation.
+4. 我们做出的解决方案
+   - 解释这个产品、skill、工具、系统或工作流是什么。
+   - 说明输入是什么、处理过程是什么、输出是什么。
+   - 讲清楚它和普通总结、普通模板、手动整理之间的差异。
 
-7. Future outlook
-   - Place this after the example.
-   - Describe how the idea could evolve: templates, automation, integrations, style presets, analytics, collaboration, versioning, or publishing workflows.
+5. 它真正创造的价值
+   - 这是重点部分之一。
+   - 尽量展开功能价值、表达价值、流程价值、复用价值、协作价值、发布价值。
+   - 不要只列“优势”，要解释为什么这些优势会改变用户的实际工作状态。
 
-8. Ending
-   - Summarize the value in a few sentences.
-   - Avoid generic hype.
+6. 核心功能拆解
+   - 从上下文中提取实际功能点。
+   - 例如：读取当前上下文、判断项目主题、自动补足场景、生成公众号可粘贴 HTML、生成封面图、按项目命名文件夹、统一保存到 E 盘、发布 GitHub 仓库等。
+   - 如果上下文对应的是其他项目，就提取那个项目自己的功能点。
 
-## Tone
+7. 一个具体案例
+   - 这是最重要的说明部分。
+   - 构造一个真实可感的使用场景：人物、任务、原本的麻烦、使用过程、生成结果、发布或应用后的变化。
+   - 用案例证明功能和价值，不要只复述功能列表。
 
-Write like a clear product article, not a raw chat summary. Use confident but grounded language. If information is inferred, keep it plausible and avoid pretending it came from external evidence.
+8. 过程中的关键取舍
+   - 写出为什么这样设计。
+   - 例如：为什么真实文件放 E 盘、为什么 C 盘只做 junction、为什么公众号版本不用 SVG/canvas、为什么文件夹按具体功能命名。
+   - 如果上下文里没有明显技术取舍，可以写产品取舍、交互取舍或内容策略取舍。
 
-## Minimum Sections
+9. 未来展望
+   - 放在案例之后。
+   - 说明未来可以如何扩展：模板、风格预设、发布平台适配、自动上传、封面图风格库、版本管理、GitHub 分发、团队协作等。
 
-Every HTML article must contain these visible sections:
+10. 项目地址 / 相关链接
+   - 如果上下文中出现 GitHub 仓库、公开发布地址、项目链接或下载地址，必须在文末单独列出。
+   - 链接文字用中文，如“GitHub 仓库：...”。
+   - 如果没有链接，不要编造。
 
-- Preface
-- The Problem
-- The Solution
-- Why It Helps
-- A Concrete Example
-- Future Outlook
-- Closing
+11. 结尾
+   - 总结它创造的具体价值。
+   - 避免空泛口号。
+
+## 必须使用的中文小标题
+
+可以根据内容改写，但必须保持全中文。推荐标题包括：
+
+- 前言：我们到底做了什么
+- 问题从哪里来
+- 解决方案是什么
+- 它真正创造的价值
+- 核心功能拆解
+- 一个具体场景
+- 关键设计取舍
+- 未来可以走向哪里
+- 项目地址
+- 结语
+
+## GitHub 链接规则
+
+- 在上下文中搜索 `github.com`、`GitHub`、`仓库`、`repo`、`repository`、`发布`、`push` 等线索。
+- 如果明确存在 GitHub 仓库链接，文末必须包含“项目地址”或“相关链接”小节。
+- 如果仓库是公开仓库，可以正常放链接。
+- 如果仓库是私有仓库或权限不明，说明“仓库已创建/已发布，但访问权限以实际设置为准”。
+- 不要把 GitHub 链接藏在正文中，文末要单独列出，方便读者打开。
+
+## 语气
+
+写得像一篇清晰、有解释力的产品/技术公众号文章。语气可以自然、有判断，但不要浮夸。让读者不仅知道“做了什么”，还知道“为什么要做”“解决了什么”“以后能怎么用”。

@@ -33,11 +33,15 @@ cover.png
 The skill asks Codex to produce an article with:
 
 - A short preface or summary
-- The market or workflow problem
+- Chinese-only section titles by default
+- A more developed discussion of the market or workflow problem
 - The proposed solution
-- The advantages
+- A fuller explanation of value, functions, meaning, and advantages
+- A core function breakdown based on the visible context
 - A concrete example scenario
+- Key design choices or tradeoffs when the context supports them
 - A future outlook section
+- A project address or GitHub link section when links appear in context
 - A concise closing
 - Multiple WeChat-copyable HTML visuals such as flow blocks, system maps, timelines, and before/after comparisons
 

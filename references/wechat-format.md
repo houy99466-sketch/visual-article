@@ -1,32 +1,32 @@
-# WeChat Official Accounts Formatting
+# 微信公众号排版
 
-Use this reference when creating the primary `wechat-article.html` deliverable. The goal is a file that can be opened in a browser, selected from the article body, copied, and pasted into the WeChat Official Accounts editor with usable rich-text formatting.
+创建主交付物 `wechat-article.html` 时使用本参考。目标是生成一个可以在浏览器中打开、选中正文区域、复制并粘贴到微信公众号编辑器中的富文本文章。
 
-## Core Rules
+## 核心规则
 
-- Put the copyable article inside a clearly marked container near the top of the page.
-- Use mostly inline styles on elements. Avoid depending on `<style>` classes for the article body because paste targets may strip class-based CSS.
-- Avoid JavaScript, canvas, interactive elements, external CSS, web fonts, and remote images in the copyable article body.
-- Avoid SVG in the copyable article body unless the user explicitly wants browser-only visuals. WeChat paste flows often do not preserve SVG reliably.
-- Prefer simple tags: `<section>`, `<p>`, `<h1>`, `<h2>`, `<h3>`, `<strong>`, `<span>`, `<blockquote>`, `<hr>`, `<table>`, `<tbody>`, `<tr>`, `<td>`, `<ul>`, `<ol>`, `<li>`.
-- Keep paragraphs short. WeChat readers scan vertically.
-- Use inline `style` attributes for spacing, color, border, background, font size, and alignment.
-- Keep the width fluid. Use `max-width: 680px; margin: 0 auto;` on the copyable container.
+- 把可复制正文放在页面靠前、标记清楚的容器中。
+- 正文元素尽量使用内联样式。不要依赖 `<style>` 里的 class，因为粘贴到编辑器时 class 样式可能被过滤。
+- 可复制正文中避免 JavaScript、canvas、交互元素、外部 CSS、网页字体和远程图片。
+- 可复制正文中尽量避免 SVG，除非用户明确要浏览器预览效果。微信公众号粘贴流程不一定稳定保留 SVG。
+- 优先使用简单标签：`<section>`、`<p>`、`<h1>`、`<h2>`、`<h3>`、`<strong>`、`<span>`、`<blockquote>`、`<hr>`、`<table>`、`<tbody>`、`<tr>`、`<td>`、`<ul>`、`<ol>`、`<li>`。
+- 段落要短，适合手机端纵向阅读。
+- 使用内联 `style` 控制间距、颜色、边框、背景、字号和对齐。
+- 宽度保持流式布局。可复制容器建议使用 `max-width: 680px; margin: 0 auto;`。
 
-## Required File Shape
+## 文件结构要求
 
-Create `wechat-article.html` with:
+创建 `wechat-article.html` 时包含：
 
-1. A small instruction strip outside the copyable body that says which area to copy.
-2. A copyable article container with `id="wechat-copy-root"`.
-3. The full article content inside that container.
-4. No required external assets for the article body.
+1. 可复制正文之外放一个简短提示条，说明应该复制哪个区域。
+2. 可复制正文容器使用 `id="wechat-copy-root"`。
+3. 完整文章正文放在这个容器内。
+4. 正文不依赖外部资源。
 
-## Recommended Visual Blocks
+## 推荐视觉模块
 
-### Highlight Summary
+### 重点概要
 
-Use a soft background block:
+使用柔和背景块：
 
 ```html
 <section style="margin: 20px 0; padding: 18px; border-radius: 8px; background: #f5f7fb; border-left: 4px solid #2f6fed;">
@@ -34,9 +34,9 @@ Use a soft background block:
 </section>
 ```
 
-### Flow Diagram
+### 流程图
 
-Use stacked steps:
+使用纵向步骤块：
 
 ```html
 <section style="margin: 24px 0;">
@@ -52,28 +52,28 @@ Use stacked steps:
 </section>
 ```
 
-### Before / After
+### 前后对比
 
-Use a two-column table, which tends to paste better than CSS grid:
+使用双列表格，通常比 CSS grid 更适合粘贴：
 
 ```html
 <table style="width: 100%; border-collapse: separate; border-spacing: 8px; margin: 20px 0;">
   <tr>
     <td style="width: 50%; vertical-align: top; padding: 16px; border-radius: 8px; background: #fff7ed; border: 1px solid #fed7aa;">
-      <strong>Before</strong>
+      <strong>使用前</strong>
       <p style="margin: 8px 0 0;">...</p>
     </td>
     <td style="width: 50%; vertical-align: top; padding: 16px; border-radius: 8px; background: #ecfdf5; border: 1px solid #a7f3d0;">
-      <strong>After</strong>
+      <strong>使用后</strong>
       <p style="margin: 8px 0 0;">...</p>
     </td>
   </tr>
 </table>
 ```
 
-### Case Story Timeline
+### 案例时间线
 
-Use numbered blocks separated by vertical spacing:
+使用编号模块和纵向间距：
 
 ```html
 <section style="margin: 20px 0;">
@@ -84,10 +84,10 @@ Use numbered blocks separated by vertical spacing:
 </section>
 ```
 
-## Writing Rules
+## 写作规则
 
-- Make the article readable even if some decorative styles are stripped.
-- Use visual blocks to clarify structure, not to imitate a complex webpage.
-- Avoid long code blocks in the WeChat article unless the user specifically needs them.
-- Prefer Chinese section titles when the intended publishing channel is a Chinese WeChat Official Account.
-- Keep the title and opening strong, but do not make the cover image repeat the title.
+- 即使部分装饰样式被过滤，文章也必须仍然可读。
+- 视觉模块用于帮助理解结构，不要模仿复杂网页。
+- 除非用户明确需要，否则不要在微信公众号文章中放很长的代码块。
+- 面向微信公众号时，默认使用中文标题和中文小标题。
+- 标题和开头要有吸引力，但封面图不要复读标题。
