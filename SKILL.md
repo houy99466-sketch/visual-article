@@ -1,6 +1,6 @@
 ---
 name: visual-article
-description: Turn the current visible conversation context into a publishable visual HTML article plus a separate generated homepage hook image. Use when the user asks to summarize a conversation, project, product idea, collaboration process, or current context into an illustrated article, especially with HTML-built diagrams, flowcharts, scenario visuals, market problem framing, solution, advantages, concrete use case, future outlook, and a cover image. Always save every generated artifact under E:\codex produce in a new folder named after the specific project, feature, product, or function discussed in the context.
+description: Turn the current visible conversation context into a publishable visual article for WeChat Official Accounts plus a separate generated homepage hook image. Use when the user asks to summarize a conversation, project, product idea, collaboration process, or current context into an illustrated article, especially with WeChat-copyable HTML/rich text, HTML-built diagrams, flowcharts, scenario visuals, market problem framing, solution, advantages, concrete use case, future outlook, and a cover image. Always save every generated artifact under E:\codex produce in a new folder named after the specific project, feature, product, or function discussed in the context.
 ---
 
 # Visual Article
@@ -11,10 +11,11 @@ Use the current visible conversation as the source material. Do not claim to rea
 
 Treat `E:\codex produce` as the default storage root for this skill and its outputs. Store the real skill directory, generated HTML, generated images, project copies, repositories, substantial work artifacts, and any user-facing deliverables there by default. Do not create real deliverables, project folders, generated repositories, copied skill folders, article assets, or substantial artifacts on the C drive. A local Codex discovery path may contain only a junction or pointer to the E drive skill directory when required for Codex to find the skill.
 
-Create two user-facing deliverables each time:
+Create these user-facing deliverables each time:
 
-1. A self-contained HTML article with embedded CSS and HTML-native visuals.
-2. A separate generated image for the article homepage or push-card cover.
+1. `wechat-article.html`: the primary deliverable, optimized so the visible article body can be copied into the WeChat Official Accounts editor as rich text.
+2. `article.html`: an optional full-page preview version when useful.
+3. `cover.png`: a separate generated image for the article homepage or push-card cover.
 
 Save every run under `E:\codex produce\<specific-context-name>\`. Put the article and cover image inside that folder. The skill may be discovered through a local Codex skill path such as `C:\Users\<user>\.agents\skills\visual-article`, but that path must only be a junction or pointer. The real skill directory and all generated deliverables must stay under `E:\codex produce`.
 
@@ -33,10 +34,12 @@ Save every run under `E:\codex produce\<specific-context-name>\`. Put the articl
    - Best visual explanations
 5. Read `references/article-structure.md` before drafting the article.
 6. Read `references/visual-patterns.md` before creating article diagrams.
-7. Create a self-contained `article.html` using HTML, CSS, and inline SVG or CSS-built diagrams. Avoid remote image dependencies for article body visuals.
-8. Read `references/cover-image-brief.md` before generating the homepage hook image.
-9. Generate one separate cover image after the article is drafted. The cover must attract interest and must not merely repeat the article title.
-10. Verify that the output files exist and that the HTML opens as a standalone file.
+7. Read `references/wechat-format.md` before creating the primary article output.
+8. Create `wechat-article.html` using WeChat-copyable rich-text HTML. Prefer inline styles, simple block layout, copyable visual blocks, and text-first diagrams. Avoid relying on global CSS, JavaScript, canvas, SVG, external stylesheets, remote images, or interactive behavior inside the copyable article body.
+9. Optionally create `article.html` as a browser preview if it helps review the output, but do not make it the only article deliverable.
+10. Read `references/cover-image-brief.md` before generating the homepage hook image.
+11. Generate one separate cover image after the article is drafted. The cover must attract interest and must not merely repeat the article title.
+12. Verify that `wechat-article.html` exists, opens as a standalone file, and contains a clearly marked copyable article body.
 
 ## Article Requirements
 
@@ -50,7 +53,7 @@ The article must include:
 - A focused example or scenario after the advantages. This is the main persuasive section.
 - A future outlook section after the example.
 - A concise ending.
-- Multiple visuals built directly into the HTML, such as flowcharts, system maps, before/after comparisons, timelines, or scenario diagrams.
+- Multiple visuals built directly into the WeChat-copyable HTML, such as flow blocks, system maps, before/after comparisons, timelines, or scenario diagrams made from styled sections, tables, text labels, separators, and simple shapes.
 
 When the context lacks complete facts, create plausible details that fit the demonstrated function and label the article as a product narrative rather than a factual case study. Do not invent specific external statistics, company claims, or user quotes unless the conversation provides them.
 
@@ -60,6 +63,7 @@ Use `E:\codex produce` for the skill folder and all generated deliverables. Trea
 
 ```text
 E:\codex produce\智能日历\
+  wechat-article.html
   article.html
   cover.png
 ```
@@ -78,6 +82,7 @@ If a tool or application temporarily creates files on the C drive, move the user
 
 Prefer filenames:
 
+- `wechat-article.html`
 - `article.html`
 - `cover.png`
 
@@ -87,5 +92,7 @@ If multiple variants are produced, use suffixes such as `article-v2.html` or `co
 
 - Read `references/article-structure.md` for the required article narrative structure.
 - Read `references/visual-patterns.md` for HTML-native diagram patterns.
+- Read `references/wechat-format.md` for WeChat Official Accounts copy/paste formatting rules.
 - Read `references/cover-image-brief.md` for homepage hook image rules.
 - Use `assets/html-template.html` as a starting point when useful, adapting it freely to the current content.
+- Use `assets/wechat-template.html` as the preferred starting point for `wechat-article.html`.

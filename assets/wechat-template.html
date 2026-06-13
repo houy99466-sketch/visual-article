@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{TITLE}}</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px 12px;
+      background: #f3f4f6;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      color: #17202a;
+    }
+    .copy-note {
+      max-width: 680px;
+      margin: 0 auto 16px;
+      padding: 12px 14px;
+      border: 1px solid #d9dee7;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="copy-note">复制下方正文区域，粘贴到微信公众号编辑器中。正文内部尽量使用内联样式，方便保留排版。</div>
+  <section id="wechat-copy-root" style="max-width: 680px; margin: 0 auto; padding: 28px 22px; background: #ffffff; color: #17202a; font-family: Arial, 'Microsoft YaHei', sans-serif; line-height: 1.85;">
+    <h1 style="margin: 0 0 18px; font-size: 28px; line-height: 1.28; font-weight: 700; color: #17202a;">{{TITLE}}</h1>
+    <section style="margin: 20px 0; padding: 18px; border-radius: 8px; background: #f5f7fb; border-left: 4px solid #2f6fed;">
+      <p style="margin: 0; color: #334155; font-size: 16px; line-height: 1.8;">{{SUMMARY}}</p>
+    </section>
+    {{BODY}}
+  </section>
+</body>
+</html>

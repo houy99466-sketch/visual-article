@@ -1,6 +1,6 @@
 # visual-article
 
-`visual-article` is a Codex skill for turning the current visible conversation context into a publishable visual HTML article and a separate homepage hook image.
+`visual-article` is a Codex skill for turning the current visible conversation context into a publishable WeChat-ready visual article and a separate homepage hook image.
 
 It is designed for conversations where a project, feature, product idea, workflow, or collaboration process needs to become a clear article rather than a raw summary.
 
@@ -21,11 +21,12 @@ The folder name should match the specific project, product, feature, or function
 The default output files are:
 
 ```text
+wechat-article.html
 article.html
 cover.png
 ```
 
-The HTML article is self-contained and uses HTML, CSS, inline SVG, or canvas for article-body visuals. The cover image is generated separately as a hook image for a homepage, feed card, or push entry.
+`wechat-article.html` is the primary article deliverable. Open it in a browser and copy the marked article body into the WeChat Official Accounts editor as rich text. It uses inline styles, short sections, callout blocks, tables, and text-first diagrams instead of relying on global CSS, JavaScript, SVG, or canvas. `article.html` can still be generated as a browser preview when useful. The cover image is generated separately as a hook image for a homepage, feed card, or push entry.
 
 ## Article Structure
 
@@ -38,7 +39,7 @@ The skill asks Codex to produce an article with:
 - A concrete example scenario
 - A future outlook section
 - A concise closing
-- Multiple HTML-native visuals such as flowcharts, system maps, timelines, and before/after comparisons
+- Multiple WeChat-copyable HTML visuals such as flow blocks, system maps, timelines, and before/after comparisons
 
 If the conversation does not provide every detail, the skill instructs Codex to infer plausible product, user, and scenario details from the visible context while avoiding unsupported external claims.
 
@@ -63,8 +64,10 @@ SKILL.md
 agents/openai.yaml
 references/article-structure.md
 references/visual-patterns.md
+references/wechat-format.md
 references/cover-image-brief.md
 assets/html-template.html
+assets/wechat-template.html
 ```
 
 ## Notes
