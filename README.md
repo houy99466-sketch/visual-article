@@ -6,11 +6,15 @@ It is designed for conversations where a project, feature, product idea, workflo
 
 ## What It Produces
 
-Each run creates a new context-based folder under:
+The real skill directory and all generated outputs are intended to live under:
 
 ```text
 E:\codex produce
 ```
+
+Codex may use a local discovery junction such as `C:\Users\<user>\.agents\skills\visual-article`, but that path should only point to the E drive directory. Real skill files, generated HTML, images, repositories, project copies, and substantial artifacts should not be stored on the C drive by default.
+
+Each run creates a new context-based folder under that E drive root.
 
 The folder name should match the specific project, product, feature, or function discussed in the context. For example, if the conversation is about building an intelligent calendar, the output folder should be named `智能日历`, not `visual-article` or `consulter-visual-article`.
 

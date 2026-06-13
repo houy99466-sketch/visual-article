@@ -9,12 +9,14 @@ description: Turn the current visible conversation context into a publishable vi
 
 Use the current visible conversation as the source material. Do not claim to read hidden or unavailable history. If the user specifies a starting point, use the visible content from that point onward. If details are incomplete, infer reasonable product, user, market, scenario, and value details from the available context and clearly shape them into a coherent article.
 
+Treat `E:\codex produce` as the default storage root for this skill and its outputs. Store the real skill directory, generated HTML, generated images, project copies, repositories, substantial work artifacts, and any user-facing deliverables there by default. Do not create real deliverables, project folders, generated repositories, copied skill folders, article assets, or substantial artifacts on the C drive. A local Codex discovery path may contain only a junction or pointer to the E drive skill directory when required for Codex to find the skill.
+
 Create two user-facing deliverables each time:
 
 1. A self-contained HTML article with embedded CSS and HTML-native visuals.
 2. A separate generated image for the article homepage or push-card cover.
 
-Save every run under `E:\codex produce\<specific-context-name>\`. Put the article and cover image inside that folder. The skill may be discovered through a local Codex skill path such as `C:\Users\<user>\.agents\skills\visual-article`, but the real skill directory and all generated deliverables must stay under `E:\codex produce`.
+Save every run under `E:\codex produce\<specific-context-name>\`. Put the article and cover image inside that folder. The skill may be discovered through a local Codex skill path such as `C:\Users\<user>\.agents\skills\visual-article`, but that path must only be a junction or pointer. The real skill directory and all generated deliverables must stay under `E:\codex produce`.
 
 ## Required Workflow
 
@@ -54,7 +56,7 @@ When the context lacks complete facts, create plausible details that fit the dem
 
 ## Output Rules
 
-Use `E:\codex produce` for the skill folder and all generated deliverables. For each skill run, create a new folder whose name directly matches the specific project, product, feature, or function in the conversation.
+Use `E:\codex produce` for the skill folder and all generated deliverables. Treat this as the default storage root unless the user explicitly chooses another drive or path. For each skill run, create a new folder whose name directly matches the specific project, product, feature, or function in the conversation.
 
 ```text
 E:\codex produce\智能日历\
@@ -71,6 +73,8 @@ Prefer human-meaningful names over generic skill names. For example:
 Do not name output folders after the skill or source plugin unless that is the actual project topic. Avoid generic names such as `visual-article`, `conversation-to-article`, `consulter-visual-article`, `article-output`, or `project-summary`.
 
 When the folder name contains spaces, punctuation, or unsafe filename characters, simplify it into a clean Chinese or short kebab-case name while preserving the project meaning.
+
+If a tool or application temporarily creates files on the C drive, move the user-facing result to `E:\codex produce` and clean up unnecessary temporary files when practical. Never leave the final output only on C.
 
 Prefer filenames:
 
