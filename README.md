@@ -12,6 +12,8 @@ Each run creates a new context-based folder under:
 E:\codex produce
 ```
 
+The folder name should match the specific project, product, feature, or function discussed in the context. For example, if the conversation is about building an intelligent calendar, the output folder should be named `智能日历`, not `visual-article` or `consulter-visual-article`.
+
 The default output files are:
 
 ```text

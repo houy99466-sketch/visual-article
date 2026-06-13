@@ -1,6 +1,6 @@
 ---
 name: visual-article
-description: Turn the current visible conversation context into a publishable visual HTML article plus a separate generated homepage hook image. Use when the user asks to summarize a conversation, project, product idea, collaboration process, or current context into an illustrated article, especially with HTML-built diagrams, flowcharts, scenario visuals, market problem framing, solution, advantages, concrete use case, future outlook, and a cover image. Always save the skill's outputs under E:\codex produce in a newly named folder based on the context's project or function.
+description: Turn the current visible conversation context into a publishable visual HTML article plus a separate generated homepage hook image. Use when the user asks to summarize a conversation, project, product idea, collaboration process, or current context into an illustrated article, especially with HTML-built diagrams, flowcharts, scenario visuals, market problem framing, solution, advantages, concrete use case, future outlook, and a cover image. Always save every generated artifact under E:\codex produce in a new folder named after the specific project, feature, product, or function discussed in the context.
 ---
 
 # Visual Article
@@ -14,13 +14,14 @@ Create two user-facing deliverables each time:
 1. A self-contained HTML article with embedded CSS and HTML-native visuals.
 2. A separate generated image for the article homepage or push-card cover.
 
-Save every run under `E:\codex produce\<context-based-folder-name>\`. Name the folder from the current context's project, feature, or topic using lowercase words, digits, and hyphens when practical. Put the article and cover image inside that folder.
+Save every run under `E:\codex produce\<specific-context-name>\`. Put the article and cover image inside that folder. The skill may be discovered through a local Codex skill path such as `C:\Users\<user>\.agents\skills\visual-article`, but the real skill directory and all generated deliverables must stay under `E:\codex produce`.
 
 ## Required Workflow
 
-1. Inspect the visible conversation and identify the project, product, feature, or work outcome.
+1. Inspect the visible conversation and identify the project, product, feature, function, or work outcome.
 2. Decide a clear article angle. Prefer practical value over a transcript-style summary.
-3. Build a compact content brief with:
+3. Choose an output folder name from the specific thing being built or explained.
+4. Build a compact content brief with:
    - Target reader or user
    - Market problem
    - Proposed solution
@@ -28,12 +29,12 @@ Save every run under `E:\codex produce\<context-based-folder-name>\`. Name the f
    - Concrete example scenario
    - Future outlook
    - Best visual explanations
-4. Read `references/article-structure.md` before drafting the article.
-5. Read `references/visual-patterns.md` before creating article diagrams.
-6. Create a self-contained `article.html` using HTML, CSS, and inline SVG or CSS-built diagrams. Avoid remote image dependencies for article body visuals.
-7. Read `references/cover-image-brief.md` before generating the homepage hook image.
-8. Generate one separate cover image after the article is drafted. The cover must attract interest and must not merely repeat the article title.
-9. Verify that the output files exist and that the HTML opens as a standalone file.
+5. Read `references/article-structure.md` before drafting the article.
+6. Read `references/visual-patterns.md` before creating article diagrams.
+7. Create a self-contained `article.html` using HTML, CSS, and inline SVG or CSS-built diagrams. Avoid remote image dependencies for article body visuals.
+8. Read `references/cover-image-brief.md` before generating the homepage hook image.
+9. Generate one separate cover image after the article is drafted. The cover must attract interest and must not merely repeat the article title.
+10. Verify that the output files exist and that the HTML opens as a standalone file.
 
 ## Article Requirements
 
@@ -53,13 +54,23 @@ When the context lacks complete facts, create plausible details that fit the dem
 
 ## Output Rules
 
-Use `E:\codex produce` for the skill folder and all generated deliverables. For each skill run, create a new folder such as:
+Use `E:\codex produce` for the skill folder and all generated deliverables. For each skill run, create a new folder whose name directly matches the specific project, product, feature, or function in the conversation.
 
 ```text
-E:\codex produce\visual-article-automation\
+E:\codex produce\智能日历\
   article.html
   cover.png
 ```
+
+Prefer human-meaningful names over generic skill names. For example:
+
+- If the context is about an intelligent calendar, use `E:\codex produce\智能日历`.
+- If the context is about a resume optimizer, use `E:\codex produce\简历优化器`.
+- If the context is about a local knowledge assistant, use `E:\codex produce\本地知识助手`.
+
+Do not name output folders after the skill or source plugin unless that is the actual project topic. Avoid generic names such as `visual-article`, `conversation-to-article`, `consulter-visual-article`, `article-output`, or `project-summary`.
+
+When the folder name contains spaces, punctuation, or unsafe filename characters, simplify it into a clean Chinese or short kebab-case name while preserving the project meaning.
 
 Prefer filenames:
 
