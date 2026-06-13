@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Article"
+  short_description: "Create visual articles from conversations."
+  default_prompt: "Use $visual-article to turn the current context into a visual article and homepage hook image."
